@@ -1,25 +1,42 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Engineer = require("Inquier");
+const Manager = require("Manager");
+const Intern = require("intern");
 
 inquirer
   .prompt([
     {
       type: "input",
       name: "name",
-      message: "What is your name?",
+      message: "What is your Managers Name?",
     },
     {
-      message: "What is your Bio",
-      name: "stack",
+      type: "input",
+      message: "What is your Managers ID",
+      name: "ID",
     },
     {
-      message: "What is you LinkedIn",
-      name: "contact",
+      type: "input",
+      message: "What is your Managers email",
+      name: "email",
+    },
+    {
+      type: "input",
+      message: "What is your Managers role",
+      choices: ["Engineer", "Intern", "Manager"],
+      name: "role",
     },
 
     {
+      type: "input",
       message: "What is your Github",
-      name: "contact",
+      name: "Github",
+    },
+    {
+      type: "input",
+      message: "What is your School Name",
+      name: "School Name",
     },
   ])
   .then((data) => {
