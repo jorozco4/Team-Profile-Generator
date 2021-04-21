@@ -11,6 +11,20 @@ describe("Employee", () => {
       expect(employee.getName()).toBe('john')
   });
   it('creates ID for the employee', () => {
-      const id = '31'
-      const employe = new Employee()
-  }
+      const testValue =  100;
+      const employe = new Employee("Foo", testValue)
+      expect(employee.id()).toBe(testValue)
+  })
+  it('creates email for the employee', () => {
+    const testValue = "fake@test.com"
+    const employe = new Employee("Foo", "ID", testValue)
+    expect(employee.email()).toBe(testValue)
+})
+
+  describe("getRole",() => {
+    it("getRole() should return \"Employee\"",() => {
+      const testValue = "Employee"
+      const employee = new Employee ("John", "ID", "fake@test.com")
+      expect(employee.getRole()).toBe(testValue);
+    })
+  })
