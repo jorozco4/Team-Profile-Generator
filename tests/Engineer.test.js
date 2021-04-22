@@ -1,18 +1,19 @@
-it("it will create a GitHub user", () => {
-    const testValue = "GithubUser"
-    const employee = new Engineer("John", "ID", "fake@test.com", "testValue ");
-  expect(employee.github.toBe(testValue);
+const Employee = require("../lib/Engineer");
+
+test("it will create a GitHub user", () => {
+  const testValue = "GithubUser";
+  const e = new Engineer("James", 1, "fake@test.com", "testValue ");
+  expect(e.github).toBe(testValue);
 });
 
-it("getRole() should return \"Engineer\"",() => {
-    const testValue = "Engineer"
-    const employee = new Engineer ("John", "ID", "fake@test.com", "GitHubUser")
-    expect(employee.getRole()).toBe(testValue);
-  })
-})
+test('getRole() should return "Engineer"', () => {
+  const testValue = "Engineer";
+  const e = new Engineer("James", 1, "fake@test.com", "GitHubUser");
+  expect(e.getRole()).toBe(testValue);
+});
 
-it("Sets up GitHub username", () => {
-    const testVaule = "GitHubUser"
-    const employee = new Engineer("John", "ID", "fake@test.com", "GitHubUser");
-  expect(typeof(employee).toBe(object);
+test("Sets up GitHub username", () => {
+  const testVaule = "GitHubUser";
+  const e = new Engineer("James", 1, "fake@test.com", "testValue");
+  expect(e.getGithub()).toBe(object);
 });

@@ -1,18 +1,19 @@
-it("it will create a Intern user", () => {
-    const testValue = "InterUser"
-    const employee = new Intern("John", "ID", "fake@test.com", "testValue ");
-  expect(employee.github.toBe(testValue);
+const Employee = require("../lib/Intern");
+
+test("it will create school constructor", () => {
+  const testValue = "GMU";
+  const e = new Intern("James", 1, "fake@test.com", "testValue ");
+  expect(e.school).toBe(testValue);
 });
 
-it("getRole() should return \"Intern\"",() => {
-    const testValue = "Intern"
-    const employee = new Intern ("John", "ID", "fake@test.com", "InternUser")
-    expect(employee.getRole()).toBe(testValue);
-  })
-})
+test('getRole() should return "Intern"', () => {
+  const testValue = "Intern";
+  const e = new Intern("James", 1, "fake@test.com", "InternUser");
+  expect(e.getRole()).toBe(testValue);
+});
 
-it("Sets up Intern username", () => {
-    const testVaule = "Intern"
-    const employee = new Intern("John", "ID", "fake@test.com", "InternUser");
-  expect(typeof(employee).toBe(object);
+test("Sets up Intern username", () => {
+  const testVaule = "GMU";
+  const e = new Intern("James", 1, "fake@test.com", "testValue");
+  expect(e.getSchool()).toBe(testValue);
 });
