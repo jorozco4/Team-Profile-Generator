@@ -59,80 +59,22 @@ margin-bottom: 10px;
       <div class="container">
         <div class=" row col-sm-6 col-sm-offset-3">
       <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">John
+        <div class="card-header bg-transparent border-success">${answers.name}
           <br>
-          <i class="bi bi-file-person">Employee</i>
+          <i class="bi bi-file-person">${answers.role}</i>
         </div>
         <div class="card-body text-success">
           
          
           <ul class="list-group">
             <li class="list-group-item">ID: ${answers.ID}</li>
-            <li class="list-group-item">Email: ${answers.email}</li>
+            <li class="list-group-item">Email: <a href="mailto:${answers.email}">${answers.email}</a></li>
             <li class="list-group-item">Office number: ${answers.officeNumber}</li>
+            <li class="list-group-item">Github:  <a href="https://github.com/${answers.github}">${answers.github}</a></li>
           </ul>
         </div>
         
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
-          <i class="bi bi-person-circle">Manager</i>
-        </div>
-        <div class="card-body text-success">
-        
-          <ul class="list-group">
-            <li class="list-group-item">ID: ${answers.ID}</li>
-            <li class="list-group-item">Email: ${answers.email}</li>
-            <li class="list-group-item">Github: ${answers.github}</li>
-          </ul>
-        </div>
-        
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-        <br>
-        <i class="bi bi-wrench">Engineer</i>
-        </div>
-        <div class="card-body text-success">
-          
-          <ul class="list-group">
-            <li class="list-group-item">ID: ${answers.ID}</li>
-            <li class="list-group-item">Email: ${answers.email}</li>
-            <li class="list-group-item">Github: ${answers.github}</li>
-          </ul>
-        </div>
-       
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
-          <i class="bi bi-wrench">Engineer</i>
-        </div>
-        <div class="card-body text-success">
-          
-          <ul class="list-group">
-            <li class="list-group-item">ID: ${answers.ID}</li>
-            <li class="list-group-item">Email: ${answers.email}</li>
-            <li class="list-group-item">Github: ${answers.github}</li>
-          </ul>
-        </div>
      
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
-          <i class='fas fa-user-graduate' style='font-size:24px'>Intern</i>
-        </div>
-        <div class="card-body text-success">
-         
-          <ul class="list-group">
-            <li class="list-group-item">ID: ${answers.ID}</li>
-            <li class="list-group-item">Email: ${answers.email}</li>
-            <li class="list-group-item">School: ${answers.schoolName}</li>
-          </ul>
-        </div>
-       
       </div>
     </body>
   </html>`;
@@ -171,7 +113,7 @@ const promptUser = () => {
     },
 
     {
-      type: "input",
+      type: "list",
       message: "What is your Managers role?",
       choices: ["Engineer", "Intern", "Manager"],
       name: "role",

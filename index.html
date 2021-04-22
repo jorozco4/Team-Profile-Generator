@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-  <html>
-   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -27,101 +33,103 @@
       crossorigin="anonymous"
     ></script>
     <style>
-    .row {
+      .row {
         display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-margin-top: 20px;
-margin-bottom: 10px;
-}
-.card{
-  background-color: red;
-  color: white;
-}
-</style>
-    <title> Team Profile Generator </title>
-    </head>
-    <body>
-      <div class="jumbotron">
-        <h1 class="text-center">My Team</h1>
-      </div>
-      <div class="container">
-        <div class=" row col-sm-6 col-sm-offset-3">
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .card {
+        background-color: red;
+        color: white;
+      }
+
+      .jumbotron {
+        background: red;
+        color: white;
+      }
+    </style>
+    <title>Team Profile Generator</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="text-center">My Team</h1>
+    </div>
+    <div class="container"></div>
+    <div class="row col-sm-6 col-sm-offset-3">
       <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">John
-          <br>
+        <div class="card-header bg-transparent border-success">
+          John
+          <br />
           <i class="bi bi-file-person">Employee</i>
         </div>
         <div class="card-body text-success">
-          
-         
           <ul class="list-group">
             <li class="list-group-item">ID:</li>
             <li class="list-group-item">Email:</li>
             <li class="list-group-item">Office number:</li>
           </ul>
         </div>
-        
       </div>
       <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
+        <div class="card-header bg-transparent border-success">
+          James
+          <br />
           <i class="bi bi-person-circle">Manager</i>
         </div>
         <div class="card-body text-success">
-        
+          <ul class="list-group">
+            <li class="list-group-item">ID:</li>
+            <li class="list-group-item">Email:</li>
+            <li class="list-group-item">
+              Github: <a href="https://github.com/jorozco4" target="_blank"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card border-success mb-3" style="max-width: 18rem">
+        <div class="card-header bg-transparent border-success">
+          James
+          <br />
+          <i class="bi bi-wrench">Engineer</i>
+        </div>
+        <div class="card-body text-success">
           <ul class="list-group">
             <li class="list-group-item">ID:</li>
             <li class="list-group-item">Email:</li>
             <li class="list-group-item">Github:</li>
           </ul>
         </div>
-        
       </div>
       <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
+        <div class="card-header bg-transparent border-success">
+          James
+          <br />
           <i class="bi bi-wrench">Engineer</i>
         </div>
         <div class="card-body text-success">
-       
           <ul class="list-group">
             <li class="list-group-item">ID:</li>
             <li class="list-group-item">Email:</li>
             <li class="list-group-item">Github:</li>
           </ul>
         </div>
-       
       </div>
       <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
-          <i class="bi bi-wrench">Engineer</i>
+        <div class="card-header bg-transparent border-success">
+          James
+          <br />
+          <i class="fas fa-user-graduate" style="font-size: 24px">Intern</i>
         </div>
         <div class="card-body text-success">
-          
-          <ul class="list-group">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:<li>
-            <li class="list-group-item">Github:</li>
-          </ul>
-        </div>
-     
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">James
-          <br>
-          <i class='fas fa-user-graduate' style='font-size:24px'>Intern</i>
-        </div>
-        <div class="card-body text-success">
-         
           <ul class="list-group">
             <li class="list-group-item">ID:</li>
             <li class="list-group-item">Email:</li>
             <li class="list-group-item">School:</li>
           </ul>
         </div>
-       
       </div>
-    </body>
-  </html>
+    </div>
+  </body>
+</html>
