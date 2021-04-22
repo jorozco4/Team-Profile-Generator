@@ -56,78 +56,32 @@
     <div class="jumbotron">
       <h1 class="text-center">My Team</h1>
     </div>
-    <div class="container"></div>
-    <div class="row col-sm-6 col-sm-offset-3">
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">
-          John
-          <br />
-          <i class="bi bi-file-person">Employee</i>
-        </div>
-        <div class="card-body text-success">
-          <ul class="list-group">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:</li>
-            <li class="list-group-item">Office number:</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">
-          James
-          <br />
-          <i class="bi bi-person-circle">Manager</i>
-        </div>
-        <div class="card-body text-success">
-          <ul class="list-group">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:</li>
-            <li class="list-group-item">
-              Github: <a href="https://github.com/jorozco4" target="_blank"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">
-          James
-          <br />
-          <i class="bi bi-wrench">Engineer</i>
-        </div>
-        <div class="card-body text-success">
-          <ul class="list-group">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:</li>
-            <li class="list-group-item">Github:</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">
-          James
-          <br />
-          <i class="bi bi-wrench">Engineer</i>
-        </div>
-        <div class="card-body text-success">
-          <ul class="list-group">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:</li>
-            <li class="list-group-item">Github:</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">
-          James
-          <br />
-          <i class="fas fa-user-graduate" style="font-size: 24px">Intern</i>
-        </div>
-        <div class="card-body text-success">
-          <ul class="list-group">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:</li>
-            <li class="list-group-item">School:</li>
-          </ul>
+    <div class="container">
+      <div class="row col-sm-6 col-sm-offset-3">
+        <div class="card border-success mb-3" style="max-width: 18rem">
+          <div class="card-header bg-transparent border-success">
+            ${answers[0].name}
+            <br />
+            <i class="bi bi-file-person">${answers[0].role}</i>
+          </div>
+          <div class="card-body text-success">
+            <ul class="list-group">
+              <li class="list-group-item">ID: ${answers[0].ID}</li>
+              <li class="list-group-item">
+                Email:
+                <a href="mailto:${answers[0].email}">${answers[0].email}</a>
+              </li>
+              <li class="list-group-item">
+                Office number: ${answers[0].officeNumber}
+              </li>
+              <li class="list-group-item">
+                Github:
+                <a href="https://github.com/${answers[0].github}"
+                  >${answers[0].github}</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

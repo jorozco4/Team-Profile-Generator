@@ -8,8 +8,8 @@ const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const generateHTML = (answers) =>
-  `<!DOCTYPE html>
+const generateHTML = (allEmployees) => {
+  return `<!DOCTYPE html>
   <html>
    <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -53,78 +53,103 @@ margin-bottom: 10px;
     <title> Team Profile Generator </title>
     </head>
     <body>
-      <div class="jumbotron">
-        <h1 class="text-center">My Team</h1>
-      </div>
-      <div class="container">
-        <div class=" row col-sm-6 col-sm-offset-3">
-      <div class="card border-success mb-3" style="max-width: 18rem">
-        <div class="card-header bg-transparent border-success">${answers.name}
-          <br>
-          <i class="bi bi-file-person">${answers.role}</i>
-        </div>
-        <div class="card-body text-success">
-          
-         
-          <ul class="list-group">
-            <li class="list-group-item">ID: ${answers.ID}</li>
-            <li class="list-group-item">Email: <a href="mailto:${answers.email}">${answers.email}</a></li>
-            <li class="list-group-item">Office number: ${answers.officeNumber}</li>
-            <li class="list-group-item">Github:  <a href="https://github.com/${answers.github}">${answers.github}</a></li>
-          </ul>
-        </div>
-        
+    <div class="jumbotron">
+      <h1 class="text-center">My Team</h1>
+    </div>
+    <div class="container">
+      <div class="row col-sm-6 col-sm-offset-3">
      
+        
+        <div class="card border-success mb-3" style="max-width: 18rem">
+          <div class="card-header bg-transparent border-success">
+            ${allEmployees[0].name}
+            <br />
+            <i class="bi bi-file-person">${allEmployees[0].role}</i>
+          </div>
+          <div class="card-body text-success">
+            <ul class="list-group">
+              <li class="list-group-item">ID: ${allEmployees[0].ID}</li>
+              <li class="list-group-item">
+                Email:
+                <a href="mailto:${allEmployees[0].email}">${allEmployees[0].email}</a>
+              </li>
+              <li class="list-group-item">
+                Office number: ${allEmployees[0].officeNumber}
+              </li>
+              <li class="list-group-item">
+                Github:
+                <a href="https://github.com/${allEmployees[0].github}"
+                  >${allEmployees[0].github}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </body>
+    </div>
+  </body>
   </html>`;
+};
 
+var allEmployees = [];
+var question = [
+  {
+    type: "input",
+    name: "name",
+    message: "What is your Managers Name?",
+  },
+  {
+    type: "input",
+    message: "What is your Managers ID?",
+    name: "ID",
+  },
+  {
+    type: "input",
+    message: "What is your Managers email?",
+    name: "email",
+  },
+  {
+    type: "input",
+    name: "officeNumber",
+    message: "What is your office number?",
+  },
+  {
+    type: "input",
+    message: "What is your Github?",
+    name: "github",
+  },
+  {
+    type: "input",
+    message: "What is your School Name?",
+    name: "schoolName",
+  },
+
+  {
+    type: "list",
+    message: "What is your Managers role?",
+    choices: ["Engineer", "Intern", "Manager"],
+    name: "role",
+  },
+  {
+    type: "confirm",
+    name: "askAgain",
+    message: "Do You want to add another employee",
+    default: false,
+  },
+];
 const promptUser = () => {
-  return inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is your Managers Name?",
-    },
-    {
-      type: "input",
-      message: "What is your Managers ID?",
-      name: "ID",
-    },
-    {
-      type: "input",
-      message: "What is your Managers email?",
-      name: "email",
-    },
-    {
-      type: "input",
-      name: "officeNumber",
-      message: "What is your office number?",
-    },
-    {
-      type: "input",
-      message: "What is your Github?",
-      name: "github",
-    },
-    {
-      type: "input",
-      message: "What is your School Name?",
-      name: "schoolName",
-    },
-
-    {
-      type: "list",
-      message: "What is your Managers role?",
-      choices: ["Engineer", "Intern", "Manager"],
-      name: "role",
-    },
-  ]);
+  return inquirer.prompt(question);
 };
 
 promptUser().then((answers) => {
-  const htmlPageContent = generateHTML(answers);
+  allEmployees.push(answers);
+  if (answers.askAgain) {
+    promptUser();
+  } else {
+    const htmlPageContent = generateHTML(allEmployees);
 
-  writeFileAsync("team.html", htmlPageContent, (err) =>
-    err ? console.log(err) : console.log("Successfully created index.html!")
-  );
+    writeFileAsync("team.html", htmlPageContent, (err) =>
+      err ? console.log(err) : console.log("Successfully created index.html!")
+    );
+  }
 });
