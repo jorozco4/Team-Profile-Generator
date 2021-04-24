@@ -84,7 +84,7 @@ margin-bottom: 10px;
                 >
               </li>
               <li class="list-group-item">
-              Office number: ${allEmployees[0].school}
+              School name: ${allEmployees[0].school}
             </li>
             </ul>
           </div>
