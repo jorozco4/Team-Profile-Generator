@@ -7,21 +7,21 @@ test("it will create a new employee object", () => {
 test("creates name of employee constructor", () => {
   const name = "James";
   const e = new Employee(name);
-  expect(e.name).toBe("James");
+  expect(e.name).toBe(name);
 });
 test("creates ID for the employee", () => {
   const testValue = 100;
-  const e = new Employee("James", testValue);
+  const e = new Employee("foo", testValue);
   expect(e.id).toBe(testValue);
 });
 test("creates email for the employee", () => {
   const testValue = "fake@test.com";
-  const e = new Employee("James", 1, testValue);
+  const e = new Employee("foo", 1, testValue);
   expect(e.email).toBe(testValue);
 });
 
 test('getRole() should return "Employee"', () => {
   const testValue = "Employee";
   const e = new Employee();
-  expect(typeof e).toBe(object);
+  expect(e.getRole()).toBe(testValue);
 });

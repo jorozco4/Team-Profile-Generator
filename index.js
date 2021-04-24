@@ -1,9 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Employee = require("./lib/Employee");
-const Engineer = require("./lib/Engineer");
-const Manager = require("./lib/Manager");
-const Intern = require("./lib/Intern");
+
+const Employee = require("./lib/employee");
+const Engineer = require("./lib/engineer");
+const Manager = require("./lib/manager");
+const Intern = require("./lib/intern");
 const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -82,6 +83,9 @@ margin-bottom: 10px;
                   >${allEmployees[0].github}</a
                 >
               </li>
+              <li class="list-group-item">
+              Office number: ${allEmployees[0].school}
+            </li>
             </ul>
           </div>
         </div>
@@ -121,7 +125,7 @@ var question = [
   {
     type: "input",
     message: "What is your School Name?",
-    name: "schoolName",
+    name: "school",
   },
 
   {

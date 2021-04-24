@@ -4,6 +4,12 @@
 
 The Purpose of this app is to allow users to utilized the terminal into making a user friendly Team Generator profile.
 
+## ScreenShots
+
+![image](https://user-images.githubusercontent.com/61666288/115968998-ae729b80-a508-11eb-9551-9f5dda7aef8f.png)
+
+![image](https://user-images.githubusercontent.com/61666288/115969036-f2fe3700-a508-11eb-9230-3150c9343160.png)
+
 ## Installation
 
 This app is installed by using "Index.js,require, fs and utils.
